@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-capsule-grid">
         <div className="footer-col-brand">
           <div className="brand-mark-mini">
-            <Image src="/Nav.png" alt="EZShare" width={110} height={28} unoptimized style={{ height: '28px', width: 'auto', objectFit: 'contain' }} />
+            <Image src="/Nav.png" alt="EZShare" width={110} height={28} unoptimized className="brand-logo-nav" style={{ height: '28px', width: 'auto', objectFit: 'contain' }} />
           </div>
           <p className="footer-summary">
             Direct Peer-to-Peer local file sharing engine. E2E Encrypted &amp; zero server caching.

@@ -20,6 +20,7 @@ export default function Header() {
             width={140}
             height={36}
             unoptimized
+            className="brand-logo-nav"
             style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
           />
         </Link>

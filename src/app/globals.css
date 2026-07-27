@@ -226,6 +226,14 @@ html[data-theme="light"] .bg-effects {
   object-fit: contain;
 }
 
+.brand-logo-nav {
+  transition: filter 0.3s ease;
+}
+
+[data-theme='light'] .brand-logo-nav {
+  filter: invert(1);
+}
+
 .brand-title {
   font-family: var(--font-sans);
   font-weight: 800;
