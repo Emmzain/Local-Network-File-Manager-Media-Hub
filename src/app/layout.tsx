@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import SmoothScrollProvider from '@/components/SmoothScrollProvider';
 
 export const metadata: Metadata = {
   title: 'EZShare — Instant P2P File Transfer Engine',
@@ -41,13 +42,15 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          {/* Ambient Subtle Background */}
-          <div className="bg-effects">
-            <div className="bg-aura aura-emerald" />
-            <div className="bg-grid-clean" />
-          </div>
+          <SmoothScrollProvider>
+            {/* Ambient Animated Gradient Backdrop */}
+            <div className="bg-effects">
+              <div className="bg-aura aura-emerald" />
+              <div className="bg-aura aura-cyan" />
+            </div>
 
-          {children}
+            {children}
+          </SmoothScrollProvider>
         </ThemeProvider>
 
         <script

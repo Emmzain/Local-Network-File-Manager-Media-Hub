@@ -31,12 +31,6 @@ export default function HomePage() {
     <div className="page-wrapper">
       <Header />
 
-      {/* ─── Premium Background Image ─── */}
-      <div className="bg-effects">
-        <div className="bg-hero-image" />
-        <div className="bg-grid-clean" />
-      </div>
-
       {/* ─── Hero Section ─── */}
       <section className="hero-section">
         <motion.div
