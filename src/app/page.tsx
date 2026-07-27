@@ -5,13 +5,14 @@ import { motion } from 'framer-motion';
 import {
   Zap, Shield, Wifi, Send, QrCode,
   ArrowRight, Upload, Smartphone, Monitor,
-  Lock, CloudOff, Gauge, Terminal, CheckCircle2, Cpu
+  Lock, CloudOff, Gauge, Terminal, CheckCircle2,
+  Cpu, Radio, Sparkles, ShieldCheck
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
@@ -27,114 +28,89 @@ const stagger = {
 
 export default function HomePage() {
   return (
-    <div className="page-container">
+    <div className="page-wrapper">
       <Header />
 
       {/* ─── Hero Section ─── */}
-      <section className="hero">
+      <section className="hero-section">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={stagger}
-          className="hero-grid"
+          className="hero-container"
         >
-          {/* Left Column - Hero Content */}
-          <div className="hero-content">
-            <motion.div variants={fadeUp} custom={0} className="hero-badge">
-              <span className="hero-badge-dot" />
-              Peer-to-Peer • No Server Storage
-            </motion.div>
+          <motion.div variants={fadeUp} custom={0} className="badge-chip">
+            <span className="badge-dot" />
+            Peer-to-Peer • No Server Storage
+          </motion.div>
 
-            <motion.h1 variants={fadeUp} custom={1} className="hero-title">
-              Share Files{' '}
-              <span className="gradient-text">Instantly</span>
-              <br />
-              Between Devices
-            </motion.h1>
+          <motion.h1 variants={fadeUp} custom={1} className="hero-heading">
+            Share Files{' '}
+            <span className="hero-gradient-mask">Instantly</span>
+            <br />
+            Between Devices
+          </motion.h1>
 
-            <motion.p variants={fadeUp} custom={2} className="hero-subtitle">
-              No apps to install. No accounts to create. No file size limits.
-              Just open the link, scan, and transfer — direct device-to-device.
-            </motion.p>
+          <motion.p variants={fadeUp} custom={2} className="hero-lead">
+            No apps to install. No accounts to create. No file size limits.
+            Just open the link, scan, and transfer — direct device-to-device.
+          </motion.p>
 
-            <motion.div variants={fadeUp} custom={3} className="hero-buttons">
-              <Link href="/send" className="glass-btn glass-btn-primary" style={{ fontSize: '1rem', padding: '14px 32px' }}>
-                <Send size={18} />
-                Send Files
-                <ArrowRight size={16} />
-              </Link>
-              <Link href="/receive" className="glass-btn glass-btn-secondary" style={{ fontSize: '1rem', padding: '14px 32px' }}>
-                <QrCode size={18} />
-                Receive Files
-              </Link>
-            </motion.div>
+          <motion.div variants={fadeUp} custom={3} className="hero-action-buttons">
+            <Link href="/send" className="btn-action btn-cyan">
+              <Send size={18} />
+              <span>Send Files</span>
+              <ArrowRight size={16} />
+            </Link>
+            <Link href="/receive" className="btn-action btn-glass">
+              <QrCode size={18} />
+              <span>Receive Files</span>
+            </Link>
+          </motion.div>
 
-            <motion.div variants={fadeUp} custom={4} className="hero-stats">
-              <div className="hero-stat">
-                <div className="hero-stat-value">P2P</div>
-                <div className="hero-stat-label">Direct Transfer</div>
-              </div>
-              <div className="hero-stat">
-                <div className="hero-stat-value">E2E</div>
-                <div className="hero-stat-label">Encrypted</div>
-              </div>
-              <div className="hero-stat">
-                <div className="hero-stat-value">0</div>
-                <div className="hero-stat-label">Server Storage</div>
-              </div>
-              <div className="hero-stat">
-                <div className="hero-stat-value">∞</div>
-                <div className="hero-stat-label">File Size</div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column - Greptile Interactive Code/Status Preview */}
-          <motion.div variants={fadeUp} custom={3} className="hero-preview-wrapper">
-            <div className="hero-terminal-card glass-card">
-              <div className="terminal-header">
-                <div className="terminal-dots">
-                  <span className="dot dot-red" />
-                  <span className="dot dot-yellow" />
-                  <span className="dot dot-green" />
+          {/* Interactive P2P Transfer Dock Capsule */}
+          <motion.div variants={fadeUp} custom={4} className="hero-transfer-dock">
+            <div className="dock-card">
+              <div className="dock-header">
+                <div className="dock-title-group">
+                  <Radio size={15} className="pulse-cyan" />
+                  <span>P2P Encrypted Channel</span>
                 </div>
-                <div className="terminal-title">
-                  <Terminal size={13} style={{ display: 'inline', marginRight: 6 }} />
-                  webrtc-p2p-engine.ts
-                </div>
-                <div className="terminal-badge">LIVE</div>
+                <div className="dock-tag">WEBRTC READY</div>
               </div>
 
-              <div className="terminal-body">
-                <div className="terminal-line">
-                  <span className="code-keyword">const</span> <span className="code-var">session</span> = <span className="code-func">createWebRTCSession</span>(&#123;
-                </div>
-                <div className="terminal-line indent">
-                  <span className="code-prop">protocol</span>: <span className="code-string">&apos;P2P-Direct&apos;</span>,
-                </div>
-                <div className="terminal-line indent">
-                  <span className="code-prop">encryption</span>: <span className="code-string">&apos;AES-GCM-256&apos;</span>,
-                </div>
-                <div className="terminal-line indent">
-                  <span className="code-prop">serverStorage</span>: <span className="code-number">0</span>,
-                </div>
-                <div className="terminal-line">
-                  &#125;);
-                </div>
-
-                <div className="terminal-divider" />
-
-                <div className="terminal-status-box">
-                  <div className="status-row">
-                    <span className="status-indicator active" />
-                    <span className="status-text">Peer-to-Peer DataChannel Ready</span>
+              <div className="dock-body">
+                <div className="dock-nodes">
+                  <div className="node-box">
+                    <Monitor size={20} className="node-icon" />
+                    <span>Sender</span>
                   </div>
-                  <div className="transfer-bar-mini">
-                    <div className="transfer-fill-mini" />
+                  <div className="node-wave-container">
+                    <div className="wave-line" />
+                    <div className="wave-pulse" />
                   </div>
-                  <div className="status-meta">
-                    <span>Speed: <strong>128 MB/s</strong> (Local Network)</span>
-                    <span>Latency: <strong>&lt; 1ms</strong></span>
+                  <div className="node-box">
+                    <Smartphone size={20} className="node-icon" />
+                    <span>Receiver</span>
+                  </div>
+                </div>
+
+                <div className="dock-stats-grid">
+                  <div className="dock-stat-item">
+                    <span className="stat-value">P2P</span>
+                    <span className="stat-label">Direct Transfer</span>
+                  </div>
+                  <div className="dock-stat-item">
+                    <span className="stat-value">E2E</span>
+                    <span className="stat-label">Encrypted</span>
+                  </div>
+                  <div className="dock-stat-item">
+                    <span className="stat-value">0</span>
+                    <span className="stat-label">Server Storage</span>
+                  </div>
+                  <div className="dock-stat-item">
+                    <span className="stat-value">∞</span>
+                    <span className="stat-label">File Size</span>
                   </div>
                 </div>
               </div>
@@ -143,78 +119,79 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ─── Features Section ─── */}
-      <section className="features-section">
+      {/* ─── Features Section (Bento Grid) ─── */}
+      <section className="bento-features-section">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
           variants={stagger}
+          className="bento-container"
         >
-          <motion.h2 variants={fadeUp} className="section-title">
+          <motion.h2 variants={fadeUp} className="bento-title">
             Why EZShare?
           </motion.h2>
-          <motion.p variants={fadeUp} className="section-subtitle" style={{ marginTop: '1rem' }}>
+          <motion.p variants={fadeUp} className="bento-subtitle">
             Everything you need for seamless file sharing, nothing you don&apos;t.
           </motion.p>
 
-          <motion.div className="features-grid" variants={stagger}>
-            <motion.div variants={fadeUp} className="glass-card feature-card">
-              <div className="feature-icon feature-icon-purple">
-                <Zap size={22} />
+          <motion.div className="bento-grid" variants={stagger}>
+            <motion.div variants={fadeUp} className="bento-card bento-wide">
+              <div className="bento-icon-wrapper cyan">
+                <Zap size={24} />
               </div>
-              <h3 className="feature-title">Lightning Fast</h3>
-              <p className="feature-desc">
+              <h3 className="bento-card-title">Lightning Fast</h3>
+              <p className="bento-card-desc">
                 Direct peer-to-peer transfer via WebRTC. No upload to server, no waiting. Files go straight from your device to theirs.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="glass-card feature-card">
-              <div className="feature-icon feature-icon-green">
-                <Shield size={22} />
+            <motion.div variants={fadeUp} className="bento-card">
+              <div className="bento-icon-wrapper emerald">
+                <Shield size={24} />
               </div>
-              <h3 className="feature-title">Secure & Private</h3>
-              <p className="feature-desc">
+              <h3 className="bento-card-title">Secure & Private</h3>
+              <p className="bento-card-desc">
                 End-to-end encrypted transfers. Your files never touch our servers. One-time sessions expire automatically.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="glass-card feature-card">
-              <div className="feature-icon feature-icon-blue">
-                <CloudOff size={22} />
+            <motion.div variants={fadeUp} className="bento-card">
+              <div className="bento-icon-wrapper indigo">
+                <CloudOff size={24} />
               </div>
-              <h3 className="feature-title">No Cloud Storage</h3>
-              <p className="feature-desc">
+              <h3 className="bento-card-title">No Cloud Storage</h3>
+              <p className="bento-card-desc">
                 Zero server storage. Files transfer directly between devices. Nothing is saved, cached, or logged anywhere.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="glass-card feature-card">
-              <div className="feature-icon feature-icon-pink">
-                <Smartphone size={22} />
+            <motion.div variants={fadeUp} className="bento-card">
+              <div className="bento-icon-wrapper pink">
+                <Smartphone size={24} />
               </div>
-              <h3 className="feature-title">Any Device</h3>
-              <p className="feature-desc">
+              <h3 className="bento-card-title">Any Device</h3>
+              <p className="bento-card-desc">
                 Works on any device with a browser — phones, tablets, laptops, desktops. No app install required.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="glass-card feature-card">
-              <div className="feature-icon feature-icon-purple">
-                <Lock size={22} />
+            <motion.div variants={fadeUp} className="bento-card">
+              <div className="bento-icon-wrapper amber">
+                <Lock size={24} />
               </div>
-              <h3 className="feature-title">No Accounts</h3>
-              <p className="feature-desc">
+              <h3 className="bento-card-title">No Accounts</h3>
+              <p className="bento-card-desc">
                 No sign-up, no login, no passwords. Just open the link and start sharing. It&apos;s that simple.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="glass-card feature-card">
-              <div className="feature-icon feature-icon-green">
-                <Gauge size={22} />
+            <motion.div variants={fadeUp} className="bento-card bento-wide">
+              <div className="bento-icon-wrapper cyan">
+                <Gauge size={24} />
               </div>
-              <h3 className="feature-title">No File Limits</h3>
-              <p className="feature-desc">
+              <h3 className="bento-card-title">No File Limits</h3>
+              <p className="bento-card-desc">
                 Transfer files of any size. Photos, videos, documents, APKs — everything works with real-time progress tracking.
               </p>
             </motion.div>
@@ -222,74 +199,69 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ─── How It Works Section ─── */}
-      <section className="how-section">
+      {/* ─── How It Works Section (Horizontal Stepper) ─── */}
+      <section className="pipeline-section">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
           variants={stagger}
+          className="pipeline-container"
         >
-          <motion.h2 variants={fadeUp} className="section-title">
+          <motion.h2 variants={fadeUp} className="bento-title">
             How It Works
           </motion.h2>
-          <motion.p variants={fadeUp} className="section-subtitle" style={{ marginTop: '1rem' }}>
+          <motion.p variants={fadeUp} className="bento-subtitle">
             Three simple steps. No complexity, no friction.
           </motion.p>
 
-          <div className="steps-container">
-            <motion.div variants={fadeUp} className="glass-card step-card">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <h3 className="step-title">Open & Generate</h3>
-                <p className="step-desc">
-                  Open EZShare on the sender device. Click &quot;Send Files&quot; to generate a unique QR code and session code.
-                </p>
-              </div>
+          <div className="pipeline-flow">
+            <motion.div variants={fadeUp} className="pipeline-card">
+              <div className="pipeline-num">01</div>
+              <h3 className="pipeline-title">Open & Generate</h3>
+              <p className="pipeline-desc">
+                Open EZShare on the sender device. Click &quot;Send Files&quot; to generate a unique QR code and session code.
+              </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="glass-card step-card">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <h3 className="step-title">Scan & Connect</h3>
-                <p className="step-desc">
-                  Open EZShare on the receiver device. Scan the QR code or enter the 6-digit session code to establish a direct P2P connection.
-                </p>
-              </div>
+            <motion.div variants={fadeUp} className="pipeline-card">
+              <div className="pipeline-num">02</div>
+              <h3 className="pipeline-title">Scan & Connect</h3>
+              <p className="pipeline-desc">
+                Open EZShare on the receiver device. Scan the QR code or enter the 6-digit session code to establish a direct P2P connection.
+              </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="glass-card step-card">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <h3 className="step-title">Drop & Transfer</h3>
-                <p className="step-desc">
-                  Drag and drop your files. They transfer instantly — direct from your device to theirs with a real-time progress bar.
-                </p>
-              </div>
+            <motion.div variants={fadeUp} className="pipeline-card">
+              <div className="pipeline-num">03</div>
+              <h3 className="pipeline-title">Drop & Transfer</h3>
+              <p className="pipeline-desc">
+                Drag and drop your files. They transfer instantly — direct from your device to theirs with a real-time progress bar.
+              </p>
             </motion.div>
           </div>
         </motion.div>
       </section>
 
       {/* ─── CTA Section ─── */}
-      <section className="cta-section">
+      <section className="action-cta-section">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={stagger}
-          className="cta-card glass-card"
+          className="cta-glow-capsule"
         >
-          <motion.h2 variants={fadeUp} className="section-title" style={{ fontSize: '2rem' }}>
+          <motion.h2 variants={fadeUp} className="bento-title" style={{ fontSize: '2.2rem' }}>
             Ready to Share?
           </motion.h2>
-          <motion.p variants={fadeUp} className="section-subtitle">
+          <motion.p variants={fadeUp} className="bento-subtitle">
             Start transferring files in seconds. No setup required.
           </motion.p>
-          <motion.div variants={fadeUp} className="hero-buttons" style={{ marginTop: '1.25rem' }}>
-            <Link href="/send" className="glass-btn glass-btn-primary" style={{ fontSize: '1rem', padding: '14px 36px' }}>
+          <motion.div variants={fadeUp} style={{ marginTop: '1.5rem' }}>
+            <Link href="/send" className="btn-action btn-cyan" style={{ padding: '14px 38px', fontSize: '1rem' }}>
               <Upload size={18} />
-              Start Sharing
+              <span>Start Sharing</span>
               <ArrowRight size={16} />
             </Link>
           </motion.div>

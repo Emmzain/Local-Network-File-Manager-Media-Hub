@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Send, QrCode, Zap, ShieldCheck, Sun, Moon } from 'lucide-react';
+import { Send, QrCode, Zap, Shield, Sun, Moon, Activity } from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 
 export default function Header() {
@@ -10,47 +10,50 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="header">
-      <Link href="/" className="header-logo">
-        <div className="header-logo-icon">
-          <Zap size={18} />
-        </div>
-        <div className="header-brand-info">
-          <span className="header-logo-text">EZShare</span>
-          <span className="header-logo-sub">P2P Network</span>
-        </div>
-      </Link>
-
-      <nav className="header-nav">
-        <Link
-          href="/send"
-          className={`nav-item ${pathname === '/send' ? 'active' : ''}`}
-        >
-          <Send size={15} />
-          <span>Send</span>
+    <header className="header-floating">
+      <div className="header-capsule">
+        <Link href="/" className="header-brand">
+          <div className="brand-mark">
+            <Zap size={18} className="brand-icon" />
+          </div>
+          <div className="brand-text-block">
+            <span className="brand-title">EZShare</span>
+            <span className="brand-tag">P2P ENGINE</span>
+          </div>
         </Link>
-        <Link
-          href="/receive"
-          className={`nav-item ${pathname === '/receive' ? 'active' : ''}`}
-        >
-          <QrCode size={15} />
-          <span>Receive</span>
-        </Link>
-      </nav>
 
-      <div className="header-actions">
-        <button
-          onClick={toggleTheme}
-          className="theme-toggle-btn"
-          title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-          aria-label="Toggle Theme"
-        >
-          {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
-        </button>
+        <nav className="header-navigation">
+          <Link
+            href="/send"
+            className={`nav-tab ${pathname === '/send' ? 'active' : ''}`}
+          >
+            <Send size={14} />
+            <span>Send</span>
+          </Link>
+          <Link
+            href="/receive"
+            className={`nav-tab ${pathname === '/receive' ? 'active' : ''}`}
+          >
+            <QrCode size={14} />
+            <span>Receive</span>
+          </Link>
+        </nav>
 
-        <div className="header-badge-status">
-          <ShieldCheck size={14} className="status-icon" />
-          <span className="status-text-desktop">WebRTC Direct</span>
+        <div className="header-actions">
+          <div className="ping-status-badge">
+            <span className="ping-pulse" />
+            <Activity size={13} />
+            <span className="ping-label">WebRTC Direct</span>
+          </div>
+
+          <button
+            onClick={toggleTheme}
+            className="theme-switch"
+            title={`Toggle ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
         </div>
       </div>
     </header>

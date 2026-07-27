@@ -3,12 +3,12 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
-  title: 'EZShare — Instant P2P File Sharing Engine',
+  title: 'EZShare — Next-Gen P2P File Sharing Engine',
   description: 'Share files instantly between devices. No apps, no accounts, no uploads. Direct peer-to-peer transfer via WebRTC — fast, secure, and private.',
   keywords: ['file sharing', 'P2P', 'WebRTC', 'AirDrop alternative', 'nearby share', 'transfer files'],
   authors: [{ name: 'EZShare' }],
   openGraph: {
-    title: 'EZShare — Instant P2P File Sharing Engine',
+    title: 'EZShare — Next-Gen P2P File Sharing Engine',
     description: 'Share files instantly between devices. Fast, secure, peer-to-peer.',
     type: 'website',
   },
@@ -18,7 +18,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#080b11',
+  themeColor: '#030712',
 };
 
 export default function RootLayout({
@@ -34,18 +34,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fira+Code:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
         <ThemeProvider>
-          {/* Background Effects */}
+          {/* Background Ambient Mesh Grid */}
           <div className="bg-effects">
-            <div className="bg-orb bg-orb-1" />
-            <div className="bg-orb bg-orb-2" />
-            <div className="bg-orb bg-orb-3" />
-            <div className="bg-grid" />
+            <div className="bg-orb bg-orb-cyan" />
+            <div className="bg-orb bg-orb-emerald" />
+            <div className="bg-orb bg-orb-indigo" />
+            <div className="bg-mesh-grid" />
           </div>
 
           {children}
