@@ -1,23 +1,21 @@
 /* ═══════════════════════════════════════════════════════════ */
 /*                   EZShare — Design System                  */
-/*              Glassmorphism + Neon + Premium Dark            */
+/*              Metamorphism + Light/Dark Dual Engine         */
 /* ═══════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
-/* ─── CSS Custom Properties ─── */
-:root {
+/* ─── CSS Custom Properties (Dark Theme Default) ─── */
+html[data-theme="dark"], :root {
   /* Core palette - Greptile Inspired Dark Slate */
   --bg-primary: #080b11;
   --bg-secondary: #0e131f;
   --bg-tertiary: #141c2e;
 
-  /* Glass */
+  /* Glass & Metamorphism */
   --glass-bg: rgba(18, 26, 41, 0.65);
   --glass-bg-hover: rgba(26, 37, 57, 0.75);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-hover: rgba(16, 185, 129, 0.35);
-  --glass-blur: 12px;
+  --glass-blur: 14px;
   --glass-blur-heavy: 24px;
 
   /* Accent colors - Greptile Emerald & Cyber Mint */
@@ -29,16 +27,12 @@
   --accent-tertiary-rgb: 6, 182, 212;
   --accent-warning: #f59e0b;
   --accent-danger: #ef4444;
-  --accent-pink: #10b981;
-  --accent-pink-rgb: 16, 185, 129;
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
   --gradient-secondary: linear-gradient(135deg, #059669 0%, #10b981 100%);
-  --gradient-warm: linear-gradient(135deg, #34d399 0%, #059669 100%);
   --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 65%),
-                   radial-gradient(ellipse at 80% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
-                   radial-gradient(ellipse at 20% 80%, rgba(52, 211, 153, 0.06) 0%, transparent 50%);
+                   radial-gradient(ellipse at 80% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
 
   /* Text */
   --text-primary: #f8fafc;
@@ -46,30 +40,56 @@
   --text-tertiary: #64748b;
   --text-accent: #10b981;
 
-  /* Shadows */
+  /* Shadows & Depth */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
   --shadow-glow-purple: 0 0 20px rgba(16, 185, 129, 0.25), 0 0 50px rgba(16, 185, 129, 0.08);
-  --shadow-glow-green: 0 0 20px rgba(52, 211, 153, 0.25), 0 0 50px rgba(52, 211, 153, 0.08);
-  --shadow-glow-blue: 0 0 20px rgba(6, 182, 212, 0.25), 0 0 50px rgba(6, 182, 212, 0.08);
 
-  /* Spacing */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-full: 9999px;
+  /* Fonts */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
 
-  /* Transitions - Ultra Smooth Bezier Curves */
-  --transition-fast: 120ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 200ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-spring: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+/* ─── Light Theme (Crisp Metamorphic Soft Depth) ─── */
+html[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
 
-  /* Font */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Glass & Metamorphism Inset/Outset */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg-hover: rgba(255, 255, 255, 0.98);
+  --glass-border: rgba(226, 232, 240, 0.9);
+  --glass-border-hover: rgba(16, 185, 129, 0.4);
+  --glass-blur: 16px;
+  --glass-blur-heavy: 28px;
+
+  /* Accent colors - Vivid Emerald & Slate Cyan */
+  --accent-primary: #059669;
+  --accent-primary-rgb: 5, 150, 105;
+  --accent-secondary: #10b981;
+  --accent-secondary-rgb: 16, 185, 129;
+  --accent-tertiary: #0891b2;
+  --accent-tertiary-rgb: 8, 145, 178;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #059669 0%, #0891b2 100%);
+  --gradient-secondary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 65%);
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --text-accent: #059669;
+
+  /* Shadows & Metamorphic Soft Depth */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+  --shadow-glow-purple: 0 0 20px rgba(5, 150, 105, 0.2);
 }
 
 /* ─── Reset & Base ─── */
@@ -377,21 +397,21 @@ body {
 }
 
 .section-title {
+  font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   text-align: center;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
+  font-family: var(--font-sans);
   color: var(--text-secondary);
   font-size: 1.1rem;
   text-align: center;
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 auto;
 }
 
@@ -421,10 +441,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(8, 11, 17, 0.85);
+  background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur-heavy));
   -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
   border-bottom: 1px solid var(--glass-border);
+  transition: background var(--transition-normal), border-color var(--transition-normal);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: scale(1.05);
 }
 
 .header-logo {

@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Send, QrCode, Zap, ShieldCheck } from 'lucide-react';
+import { Send, QrCode, Zap, ShieldCheck, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/components/ThemeProvider';
 
 export default function Header() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="header">
@@ -13,7 +15,7 @@ export default function Header() {
         <div className="header-logo-icon">
           <Zap size={18} />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="header-brand-info">
           <span className="header-logo-text">EZShare</span>
           <span className="header-logo-sub">P2P Network</span>
         </div>
@@ -36,9 +38,20 @@ export default function Header() {
         </Link>
       </nav>
 
-      <div className="header-badge-status">
-        <ShieldCheck size={14} className="status-icon" />
-        <span>WebRTC Direct</span>
+      <div className="header-actions">
+        <button
+          onClick={toggleTheme}
+          className="theme-toggle-btn"
+          title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+          aria-label="Toggle Theme"
+        >
+          {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+        </button>
+
+        <div className="header-badge-status">
+          <ShieldCheck size={14} className="status-icon" />
+          <span className="status-text-desktop">WebRTC Direct</span>
+        </div>
       </div>
     </header>
   );
