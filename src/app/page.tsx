@@ -39,9 +39,10 @@ export default function HomePage() {
           variants={stagger}
           className="hero-container"
         >
+          {/* Unique Minimalist Tech Capsule Tag - Dot Removed */}
           <motion.div variants={fadeUp} custom={0} className="badge-chip">
-            <span className="badge-dot" />
-            Peer-to-Peer • No Server Storage
+            <ShieldCheck size={14} className="badge-icon" />
+            <span>Peer-to-Peer • No Server Storage</span>
           </motion.div>
 
           <motion.h1 variants={fadeUp} custom={1} className="hero-heading">
@@ -76,7 +77,7 @@ export default function HomePage() {
                   <Radio size={15} className="pulse-cyan" />
                   <span>P2P Encrypted Channel</span>
                 </div>
-                <div className="dock-tag">WEBRTC READY</div>
+                <div className="dock-tag">WEBRTC DIRECT</div>
               </div>
 
               <div className="dock-body">
@@ -137,7 +138,7 @@ export default function HomePage() {
 
           <motion.div className="bento-grid" variants={stagger}>
             <motion.div variants={fadeUp} className="bento-card bento-wide">
-              <div className="bento-icon-wrapper cyan">
+              <div className="bento-icon-wrapper">
                 <Zap size={24} />
               </div>
               <h3 className="bento-card-title">Lightning Fast</h3>
@@ -147,7 +148,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="bento-card">
-              <div className="bento-icon-wrapper emerald">
+              <div className="bento-icon-wrapper">
                 <Shield size={24} />
               </div>
               <h3 className="bento-card-title">Secure & Private</h3>
@@ -157,7 +158,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="bento-card">
-              <div className="bento-icon-wrapper indigo">
+              <div className="bento-icon-wrapper">
                 <CloudOff size={24} />
               </div>
               <h3 className="bento-card-title">No Cloud Storage</h3>
@@ -167,7 +168,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="bento-card">
-              <div className="bento-icon-wrapper pink">
+              <div className="bento-icon-wrapper">
                 <Smartphone size={24} />
               </div>
               <h3 className="bento-card-title">Any Device</h3>
@@ -177,7 +178,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="bento-card">
-              <div className="bento-icon-wrapper amber">
+              <div className="bento-icon-wrapper">
                 <Lock size={24} />
               </div>
               <h3 className="bento-card-title">No Accounts</h3>
@@ -187,7 +188,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="bento-card bento-wide">
-              <div className="bento-icon-wrapper cyan">
+              <div className="bento-icon-wrapper">
                 <Gauge size={24} />
               </div>
               <h3 className="bento-card-title">No File Limits</h3>
