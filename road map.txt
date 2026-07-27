@@ -1,0 +1,248 @@
+Agar target **Nearby Share ka premium web version** banana hai, to shuru se architecture sahi rakhna bohot important hai. PWA support bhi start se plan karni chahiye.
+
+# EZ Share Roadmap
+
+## Phase 1 — Foundation (Week 1)
+
+**Goal:** Project setup + premium UI
+
+* ✅ Next.js 15
+* ✅ TypeScript
+* ✅ Tailwind CSS
+* ✅ shadcn/ui
+* ✅ Framer Motion
+* ✅ PWA setup
+* ✅ Dark/Light Mode
+* ✅ Responsive UI
+* ✅ SEO & Metadata
+
+Pages:
+
+* Landing
+* Connect
+* Send
+* Receive
+* About
+
+---
+
+## Phase 2 — PWA (Week 1)
+
+* Installable App
+* Offline page
+* App Icons
+* Splash Screen
+* Manifest
+* Service Worker
+* Mobile optimized
+* Desktop install support
+
+---
+
+## Phase 3 — Connection System
+
+QR Connection
+
+```
+Device A
+Generate QR
+
+↓
+
+Device B
+
+Scan QR
+
+↓
+
+Secure Connection
+```
+
+Features:
+
+* Device Name
+* Random Session ID
+* QR Pairing
+* Disconnect
+* Connection Status
+
+---
+
+## Phase 4 — WebRTC
+
+* P2P Connection
+* ICE Candidates
+* STUN Server
+* TURN fallback
+* Auto reconnect
+
+---
+
+## Phase 5 — File Transfer
+
+* Drag & Drop
+* Multiple Files
+* Large Files
+* Chunk Transfer
+* Resume
+* Cancel
+* Speed
+* ETA
+* Progress
+
+---
+
+## Phase 6 — Premium UX
+
+Animations
+
+* Page transitions
+* Card animations
+* Drag effects
+* Success animation
+* Sound effects (optional)
+* Haptics (mobile)
+
+---
+
+## Phase 7 — Extra Sharing
+
+Support:
+
+* Images
+* Videos
+* Documents
+* ZIP
+* APK
+* Clipboard Text
+* Clipboard Images
+
+---
+
+## Phase 8 — History
+
+Recent
+
+```
+Yesterday
+
+photo.jpg
+
+2.1 MB
+
+Received
+
+✔
+```
+
+---
+
+## Phase 9 — Settings
+
+* Device Name
+* Theme
+* Language
+* Auto Download
+* Notifications
+* Sound
+* Clear History
+
+---
+
+## Phase 10 — Security
+
+* One-time Session
+* Encrypted Transfer
+* Session Expiry
+* File Verification
+* No Stored Files
+
+---
+
+# Folder Structure
+
+```text
+app/
+components/
+features/
+hooks/
+lib/
+types/
+public/
+styles/
+```
+
+---
+
+# UI Pages
+
+🏠 Home
+
+📱 Scan QR
+
+🖥 Generate QR
+
+📂 Send Files
+
+📥 Receive
+
+📜 History
+
+⚙ Settings
+
+---
+
+# Tech Stack
+
+Frontend
+
+* Next.js
+* React
+* TypeScript
+* Tailwind
+* Framer Motion
+* shadcn/ui
+
+Backend
+
+* Node.js
+* Socket.IO
+* WebRTC
+* STUN/TURN
+
+Deploy
+
+* Vercel (Frontend)
+* Railway (Signaling Server)
+
+---
+
+# Future Features (v2)
+
+* Folder Sharing
+* Video Streaming
+* Clipboard Sync
+* Device Discovery (future)
+* Cross-platform support
+* Link Sharing
+* Group Transfer
+* Broadcast
+* Nearby Rooms
+
+---
+
+# Final Development Order
+
+1. UI Design
+2. PWA
+3. QR Pairing
+4. WebRTC Connection
+5. File Transfer
+6. Progress UI
+7. Multiple Files
+8. History
+9. Settings
+10. Security
+11. Optimization
+12. Production Deployment
+
