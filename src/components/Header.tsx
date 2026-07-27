@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Send, QrCode, Zap } from 'lucide-react';
+import { Send, QrCode, Zap, ShieldCheck } from 'lucide-react';
 
 export default function Header() {
   const pathname = usePathname();
@@ -13,25 +13,33 @@ export default function Header() {
         <div className="header-logo-icon">
           <Zap size={18} />
         </div>
-        <span>EZShare</span>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <span className="header-logo-text">EZShare</span>
+          <span className="header-logo-sub">P2P Network</span>
+        </div>
       </Link>
 
       <nav className="header-nav">
         <Link
           href="/send"
-          className={pathname === '/send' ? 'active' : ''}
+          className={`nav-item ${pathname === '/send' ? 'active' : ''}`}
         >
-          <Send size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} />
+          <Send size={15} />
           <span>Send</span>
         </Link>
         <Link
           href="/receive"
-          className={pathname === '/receive' ? 'active' : ''}
+          className={`nav-item ${pathname === '/receive' ? 'active' : ''}`}
         >
-          <QrCode size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} />
+          <QrCode size={15} />
           <span>Receive</span>
         </Link>
       </nav>
+
+      <div className="header-badge-status">
+        <ShieldCheck size={14} className="status-icon" />
+        <span>WebRTC Direct</span>
+      </div>
     </header>
   );
 }
