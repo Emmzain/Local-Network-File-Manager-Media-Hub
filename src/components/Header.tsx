@@ -15,10 +15,11 @@ export default function Header() {
       <div className="header-capsule">
         <Link href="/" className="header-brand">
           <Image
-            src="/logo-es.svg"
+            src="/favicon.ico"
             alt="EZShare Logo"
             width={34}
             height={34}
+            unoptimized
             className="brand-logo-img"
           />
           <div className="brand-text-block">
