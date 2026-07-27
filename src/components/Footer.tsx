@@ -1,5 +1,5 @@
-import { Zap, ShieldCheck, Cpu, Lock, ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
+import { ShieldCheck, Cpu, Lock } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,11 +7,11 @@ export default function Footer() {
       <div className="footer-capsule-grid">
         <div className="footer-col-brand">
           <div className="brand-mark-mini">
-            <Zap size={16} />
+            <Image src="/logo.png" alt="EZShare" width={22} height={22} className="brand-logo-img-sm" />
             <span>EZShare</span>
           </div>
           <p className="footer-summary">
-            Direct Peer-to-Peer local file sharing engine. E2E Encrypted & zero server caching.
+            Direct Peer-to-Peer local file sharing engine. E2E Encrypted &amp; zero server caching.
           </p>
         </div>
 

@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Send, QrCode, Zap, Shield, Sun, Moon, Activity } from 'lucide-react';
+import { Send, QrCode, Sun, Moon, Activity } from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 
 export default function Header() {
@@ -13,9 +14,13 @@ export default function Header() {
     <header className="header-floating">
       <div className="header-capsule">
         <Link href="/" className="header-brand">
-          <div className="brand-mark">
-            <Zap size={18} className="brand-icon" />
-          </div>
+          <Image
+            src="/logo.png"
+            alt="EZShare Logo"
+            width={34}
+            height={34}
+            className="brand-logo-img"
+          />
           <div className="brand-text-block">
             <span className="brand-title">EZShare</span>
             <span className="brand-tag">P2P ENGINE</span>
