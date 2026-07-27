@@ -17,8 +17,8 @@ export default function Header() {
           <Image
             src="/favicon.ico"
             alt="EZShare Logo"
-            width={34}
-            height={34}
+            width={44}
+            height={44}
             unoptimized
             className="brand-logo-img"
           />

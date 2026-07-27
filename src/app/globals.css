@@ -213,15 +213,15 @@ html[data-theme="light"] .bg-effects {
 }
 
 .brand-logo-img {
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   object-fit: contain;
 }
 
 .brand-logo-img-sm {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   border-radius: 6px;
   object-fit: contain;
 }
