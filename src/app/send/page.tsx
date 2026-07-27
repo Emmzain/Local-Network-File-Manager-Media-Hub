@@ -141,7 +141,7 @@ export default function SendPage() {
               {requireCode ? 'Require PIN Code: ON' : 'Direct Join (No PIN)'}
             </button>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 'var(--radius-full)', padding: '4px 12px', fontSize: '0.8rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: '9999px', padding: '6px 14px', fontSize: '0.8rem' }}>
               <Settings size={13} style={{ color: 'var(--text-tertiary)' }} />
               <span style={{ color: 'var(--text-tertiary)' }}>Port:</span>
               <select
@@ -149,7 +149,7 @@ export default function SendPage() {
                 onChange={(e) => setSelectedPort(e.target.value)}
                 style={{
                   background: 'transparent',
-                  color: 'var(--accent-secondary)',
+                  color: 'var(--accent-primary)',
                   border: 'none',
                   outline: 'none',
                   fontSize: '0.8rem',

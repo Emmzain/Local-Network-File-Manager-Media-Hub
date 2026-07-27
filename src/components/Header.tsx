@@ -15,7 +15,7 @@ export default function Header() {
       <div className="header-capsule">
         <Link href="/" className="header-brand">
           <Image
-            src="/logo.png"
+            src="/logo-es.svg"
             alt="EZShare Logo"
             width={34}
             height={34}

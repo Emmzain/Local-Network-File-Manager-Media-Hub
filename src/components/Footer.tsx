@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-capsule-grid">
         <div className="footer-col-brand">
           <div className="brand-mark-mini">
-            <Image src="/logo.png" alt="EZShare" width={22} height={22} className="brand-logo-img-sm" />
+            <Image src="/logo-es.svg" alt="EZShare" width={22} height={22} className="brand-logo-img-sm" />
             <span>EZShare</span>
           </div>
           <p className="footer-summary">
