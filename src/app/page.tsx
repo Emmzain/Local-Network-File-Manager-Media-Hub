@@ -39,10 +39,9 @@ export default function HomePage() {
           variants={stagger}
           className="hero-container"
         >
-          {/* Unique Minimalist Tech Capsule Tag - Dot Removed */}
-          <motion.div variants={fadeUp} custom={0} className="badge-chip">
-            <ShieldCheck size={14} className="badge-icon" />
-            <span>Peer-to-Peer • No Server Storage</span>
+          {/* Hero Pure Text Badge */}
+          <motion.div variants={fadeUp} custom={0} className="hero-text-tag">
+            Peer-to-Peer • No Server Storage
           </motion.div>
 
           <motion.h1 variants={fadeUp} custom={1} className="hero-heading">
