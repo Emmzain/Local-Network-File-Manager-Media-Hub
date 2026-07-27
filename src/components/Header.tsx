@@ -15,17 +15,13 @@ export default function Header() {
       <div className="header-capsule">
         <Link href="/" className="header-brand">
           <Image
-            src="/favicon.ico"
-            alt="EZShare Logo"
-            width={44}
-            height={44}
+            src="/Nav.png"
+            alt="EZShare"
+            width={140}
+            height={36}
             unoptimized
-            className="brand-logo-img"
+            style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
           />
-          <div className="brand-text-block">
-            <span className="brand-title">EZShare</span>
-            <span className="brand-tag">P2P ENGINE</span>
-          </div>
         </Link>
 
         <nav className="header-navigation">
